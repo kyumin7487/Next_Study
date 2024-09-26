@@ -1,38 +1,42 @@
-import type { Category } from '@/data/category';
-import { SkeletonCard } from '@/ui/skeleton-card';
-import { notFound } from 'next/navigation';
+import { getTopCategories } from '@/data/category';
+import { ClickCounter } from '@/ui/click-counter';
+import { TabGroup } from '@/ui/tab-group';
+import React from 'react';
+import { Metadata } from 'next'
 
-export default async function Page({
-    params,
-    }: {
-    params: { categorySlug: string };
+export const metadata: Metadata = {
+    title: '레벨업 Next.js: 에러 처리 UI',
+}
+
+export default async function Layout({
+                                         children,
+                                     }: {
+    children: React.ReactNode;
 }) {
-    const res = await fetch(
-        `https://app-router-api.vercel.app/api/categories?delay=3000&slug=${params.categorySlug}`,
-        {
-            cache: 'no-cache',
-        },
-    );
-
-    if (!res.ok) {
-        throw new Error('무언가 잘못되었습니다!');
-    }
-
-    const category = (await res.json()) as Category;
-
-    if (!category) {
-        notFound();
-    }
+    const categories = await getTopCategories();
 
     return (
-        <div className="space-y-4">
-            <h1 className="text-xl font-medium text-gray-400/80">{category.name}</h1>
+        <div className="space-y-9">
+            <div className="flex justify-between">
+                <TabGroup
+                    path="/error-handling"
+                    items={[
+                        {
+                            text: '홈',
+                        },
+                        ...categories.map((x) => ({
+                            text: x.name,
+                            slug: x.slug,
+                        })),
+                    ]}
+                />
 
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-                {Array.from({ length: category.count }).map((_, i) => (
-                    <SkeletonCard key={i} />
-                ))}
+                <div className="self-start">
+                    <ClickCounter />
+                </div>
             </div>
+
+            <div>{children}</div>
         </div>
     );
 }
