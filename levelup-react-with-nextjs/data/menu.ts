@@ -23,11 +23,6 @@ export const menus: { name: string; items: Item[] }[] = [
                 slug: 'route-groups',
                 description: 'URL 경로에 영향을 주지 않고 라우트를 조직',
             },
-            {
-                name: '병렬 라우팅',
-                slug: 'parallel-routes',
-                description: '동일한 레이아웃에서 여러 페이지 렌더링하기',
-            },
         ],
     },
     {
