@@ -16,10 +16,9 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "ms": "^3.0.0-canary.1",
-    "next": "14.2.10",
+    "next": "14.2.9",
     "react": "^18",
     "react-dom": "^18",
-    "styled-components": "^6.1.13",
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
@@ -27,8 +26,9 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.10",
+    "eslint-config-next": "14.2.9",
     "postcss": "^8",
+    "sass": "^1.79.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Roboto Mono", monospace;
+}
+
+h1 {
+  font-family: var(--font-secondary);
+  /* font-family: var(--font-primary); */
+}

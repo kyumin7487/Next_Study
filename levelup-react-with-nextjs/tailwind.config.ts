@@ -10,6 +10,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      // backgroundImage: {
+      //   "vc-border-gradient": "linear-gradient(to right, #FF0080, #7928CA)",
+      // },
       colors: {
         gray: colors.slate,
         "gray-1000": colors.white,
