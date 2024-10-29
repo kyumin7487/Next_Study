@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { menus, type Item } from '@/data/menu';
-import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import { Bars3BottomLeftIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import clsx from 'clsx';
-import { useState } from 'react';
+import { menus, type Item } from "@/data/menu";
+import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import clsx from "clsx";
+import { useState } from "react";
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,6 @@ export function GlobalNav() {
           className="group flex w-full items-center gap-x-2.5"
           onClick={close}
         >
-
           <h3 className="font-semibold tracking-wide text-black group-hover:text-gray-400">
             레벨업 Next.js
           </h3>
@@ -41,8 +40,8 @@ export function GlobalNav() {
       </button>
 
       <div
-        className={clsx('overflow-y-auto lg:static lg:block', {
-          'fixed inset-x-0 bottom-0 top-14 mt-px bg-white': isOpen,
+        className={clsx("overflow-y-auto lg:static lg:block", {
+          "fixed inset-x-0 bottom-0 top-14 mt-px bg-white": isOpen,
           hidden: !isOpen,
         })}
       >
@@ -83,11 +82,11 @@ function GlobalNavItem({
       onClick={close}
       href={`/${item.slug}`}
       className={clsx(
-        'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-800',
+        "block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-800",
         {
-          'text-gray-600 hover:bg-gray-100': !isActive,
-          'text-gray-800 bg-gray-200': isActive,
-        },
+          "text-gray-600 hover:bg-gray-100": !isActive,
+          "text-gray-800 bg-gray-200": isActive,
+        }
       )}
     >
       {item.name}

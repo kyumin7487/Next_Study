@@ -6,7 +6,7 @@ export type Item = {
 
 export const menus: { name: string; items: Item[] }[] = [
   {
-    name: "라우팅: 레이아웃",
+    name: "라우팅: 기법",
     items: [
       {
         name: "라우팅 기본",
@@ -22,6 +22,11 @@ export const menus: { name: string; items: Item[] }[] = [
         name: "라우팅 그룹",
         slug: "route-groups",
         description: "URL 경로에 영향을 주지 않고 라우트를 조직",
+      },
+      {
+        name: "병렬 라우팅",
+        slug: "parallel-routes",
+        description: "동일한 레이아웃에서 여러 페이지 렌더링하기",
       },
     ],
   },
@@ -47,39 +52,50 @@ export const menus: { name: string; items: Item[] }[] = [
     ],
   },
   {
+    name: "렌더링: 데이터 가져오기",
+    items: [
+      {
+        name: "정적 사이트 생성",
+        slug: "ssg",
+        description: "Generate static pages",
+      },
+      {
+        name: "증분적 정적 재생성",
+        slug: "isr",
+        description: "Get the best of both worlds between static & dynamic",
+      },
+      {
+        name: "서버 사이드 렌더링",
+        slug: "ssr",
+        description: "Server-render pages",
+      },
+
+      {
+        name: "서스펜스 스트리밍",
+        slug: "streaming",
+        description:
+          "Streaming data fetching from the server with React Suspense",
+      },
+    ],
+  },
+  {
+    name: "렌더링: 서버/클라이언트 컴포넌트",
+    items: [
+      {
+        name: "리액트 컨텍스트",
+        slug: "context",
+        description:
+          "Pass context between Client Componets that cross erver/Client Components",
+      },
+    ],
+  },
+  {
     name: "다양한 기법",
     items: [
       {
         name: "CSS 스타일링",
         slug: "styling",
         description: "다양한 CSS 스타일링 라이브러리 및 방법론을 탐구",
-      },
-    ],
-  },
-  {
-    name: '렌더링: 데이터 가져오기',
-    items: [
-      {
-        name: '정적 사이트 생성',
-        slug: 'ssg',
-        description: 'Generate static pages',
-      },
-      {
-        name: '증분적 정적 재생성',
-        slug: 'isr',
-        description: 'Get the best of both worlds between static & dynamic',
-      },
-      {
-        name: '서버 사이드 렌더링',
-        slug: 'ssr',
-        description: 'Server-render pages',
-      },
-
-      {
-        name: '서스펜스 스트리밍',
-        slug: 'streaming',
-        description:
-            'Streaming data fetching from the server with React Suspense',
       },
     ],
   },
