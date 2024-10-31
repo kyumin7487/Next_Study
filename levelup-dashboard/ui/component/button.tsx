@@ -1,23 +1,19 @@
-export const generatePagination = (currentPage: number, totalPages: number) => {
-    if (totalPages <= 7) {
-        return Array.from({ length: totalPages }, (_, i) => i + 1);
-    }
+import clsx from 'clsx';
 
-    if (currentPage <= 3) {
-        return [1, 2, 3, '...', totalPages - 1, totalPages];
-    }
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode;
+}
 
-    if (currentPage >= totalPages - 2) {
-        return [1, 2, '...', totalPages - 2, totalPages - 1, totalPages];
-    }
-
-    return [
-        1,
-        '...',
-        currentPage - 1,
-        currentPage,
-        currentPage + 1,
-        '...',
-        totalPages,
-    ];
-};
+export function Button({ children, className, ...rest }: ButtonProps) {
+    return (
+        <button
+            {...rest}
+            className={clsx(
+                'flex h-10 items-center rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50',
+                className,
+            )}
+        >
+            {children}
+        </button>
+    );
+}
