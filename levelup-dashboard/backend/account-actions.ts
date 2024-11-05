@@ -110,10 +110,13 @@ export async function fetchLoggedInUser(email: string) {
 
 import { signOut } from '@/auth';
 
+/**
+ * 로그아웃을 수행하는 함수
+ */
 export async function performLogout() {
     'use server';
     try {
-        await signOut(); // 로그아웃 실행
+        await signOut();
         console.log('Successfully logged out');
     } catch (error) {
         console.error('Logout failed:', error);
