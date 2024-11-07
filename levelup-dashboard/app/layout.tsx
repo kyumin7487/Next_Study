@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: {
+  children,
+}: {
   children: React.ReactNode;
 }) {
   return (
-      <html lang="ko">
+    <html lang="ko">
       <body className={`${notoSansKR.className} antialiased`}>
-      <WebVitals />
-      {children}
+        <WebVitals />
+        {children}
       </body>
-      </html>
+    </html>
   );
 }
